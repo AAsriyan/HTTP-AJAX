@@ -1,13 +1,18 @@
 import React from "react";
 
 const FriendButtons = props => {
-  console.log(props);
   return (
     <div>
-      <button onClick={() => props.handleDelete(props.friend.id)}>
+      <button onClick={e => props.handleDelete(e, props.friend.id)}>
         Delete
       </button>
-      <button onClick={props.handleEdit}>Update</button>
+      {!props.isEditing ? (
+        <button onClick={props.handleEdit}>Update</button>
+      ) : (
+        <button onClick={e => props.updateFriend(e, props.friend.id)}>
+          Submit
+        </button>
+      )}
     </div>
   );
 };
