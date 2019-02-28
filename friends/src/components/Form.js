@@ -10,7 +10,7 @@ const Form = props => {
         name="name"
         value={props.name}
         onChange={props.handleChanges}
-        //autoComplete="off"
+        autoComplete="off"
         required
       />
       <input
@@ -19,7 +19,7 @@ const Form = props => {
         name="age"
         value={props.age}
         onChange={props.handleChanges}
-        //autoComplete="off"
+        autoComplete="off"
         required
       />
       <input
@@ -28,12 +28,12 @@ const Form = props => {
         name="email"
         value={props.email}
         onChange={props.handleChanges}
-        //autoComplete="off"
+        autoComplete="off"
         required
       />
-      <Link to="/friends-list">
-        <button type="submit">Submit</button>
-      </Link>
+
+      <button type="submit">Submit</button>
+
       <Route path="/friends-list" />
     </form>
   );

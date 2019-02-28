@@ -14,6 +14,12 @@ export class Friend extends Component {
       : this.setState({ isEditing: true });
   };
 
+  reset = () => {
+    this.state.isEditing
+      ? this.setState({ isEditing: false })
+      : this.setState({ isEditing: true });
+  };
+
   render() {
     {
       if (this.state.isEditing) {
@@ -36,7 +42,7 @@ export class Friend extends Component {
             <input
               type="text"
               placeholder="Enter Email"
-              name="text"
+              name="email"
               value={this.props.email}
               onChange={this.props.handleChanges}
             />
@@ -46,6 +52,7 @@ export class Friend extends Component {
               handleEdit={this.props.handleEdit}
               handleDelete={this.props.handleDelete}
               updateFriend={this.props.updateFriend}
+              reset={this.reset}
             />
           </form>
         );

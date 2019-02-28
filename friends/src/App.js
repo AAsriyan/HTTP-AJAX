@@ -48,11 +48,12 @@ class App extends Component {
       .post("http://localhost:5000/friends", newFriend)
       .then(res => {
         this.setState({ friends: res.data });
+        this.props.history.push("/friends-list");
       })
       .catch(err => console.log(err));
   };
 
-  updateFriend = (e, id) => {
+  updateFriend = (e, id, edit) => {
     e.preventDefault();
 
     axios

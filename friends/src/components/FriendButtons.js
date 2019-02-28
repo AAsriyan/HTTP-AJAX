@@ -9,7 +9,9 @@ const FriendButtons = props => {
       {!props.isEditing ? (
         <button onClick={props.handleEdit}>Update</button>
       ) : (
-        <button onClick={e => props.updateFriend(e, props.friend.id)}>
+        <button
+          onClick={e => props.updateFriend(e, props.friend.id, props.reset())}
+        >
           Submit
         </button>
       )}
